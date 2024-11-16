@@ -104,6 +104,10 @@ Customer Experience:
     Improved driver availability and efficient pricing lead to better customer satisfaction.
 
 ## Summary
+
+
+![Untitled-1](https://github.com/user-attachments/assets/cef1e2a9-610d-4926-aa5e-2031d5a49c7b)
+
 ### This project provides a comprehensive approach to understanding and optimizing NYC taxi operations. Using data-driven insights from statistical analysis, machine learning, and A/B testing, the project delivers actionable recommendations for fleet management, pricing strategies, and customer service improvements.
 
 
