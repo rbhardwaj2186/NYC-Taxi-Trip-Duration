@@ -19,18 +19,26 @@ Data Exploration:
 
 Feature Engineering:
 
+![Untitled](https://github.com/user-attachments/assets/f481a07c-2ea2-4da3-b5da-b23168015fd1)
 
 
     Create additional features like pickup_hour and pickup_dayofweek to capture temporal effects.
     Categorize trips into short, medium, and long durations for simplified analysis.
 
 Outlier Removal:
+![Untitled](https://github.com/user-attachments/assets/6e8b59fc-774a-4dbe-84bd-5d1a2097af2f)
+
 
     Use the Interquartile Range (IQR) method to remove extreme trip durations, ensuring the data focuses on representative patterns.
 
 Statistical Testing:
 
+![Untitled-1](https://github.com/user-attachments/assets/b665a328-052c-42fb-8115-5cc41881a8e8)
+
+
     Perform A/B testing to evaluate the influence of categorical variables like pickup hour parity on trip duration.
+
+    
 
 ## Statistical Understanding
 
@@ -69,10 +77,17 @@ A/B Testing Results:
     Compared average trip durations for groups A (even pickup hours) and B (odd pickup hours). The results showed minimal variation.
 
 Heatmaps and Box Plots:
+![Untitled](https://github.com/user-attachments/assets/87e14095-a42b-4ab4-978a-55c6e707d9fb)
+![Untitled](https://github.com/user-attachments/assets/d6243d5f-4093-4bfa-accd-f63978458fc7)
+![Untitled-1](https://github.com/user-attachments/assets/5c54f54f-57a2-42ca-bb67-8d36bb7092b7)
+
+
 
     Created to analyze hourly and daily trends, highlighting variability in trip durations and pickup activity.
 
 Hypothesis Testing Results:
+
+![Untitled-1](https://github.com/user-attachments/assets/aa0c4787-3170-4b38-9bdc-b33c360b1bf8)
 
 Compared average trip durations across the days of the week. The results showed significant variation, with the ANOVA test confirming that trip durations differ statistically between weekdays and weekends. This indicates that trip patterns are influenced by the day, reflecting shorter commutes during weekdays and longer trips on weekends.
 
