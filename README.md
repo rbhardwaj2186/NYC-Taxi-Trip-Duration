@@ -48,6 +48,19 @@ Outlier Removal:
 
     Outliers were removed using the IQR method, ensuring extreme values did not dominate the analysis or skew results.
 
+Geospatial Analysis:
+![rer1](https://github.com/user-attachments/assets/5828fe99-5a52-4423-99c1-cd4379976f6b)
+![rer2](https://github.com/user-attachments/assets/bb226430-4d01-4fa4-987e-4fe4d35610cf)
+
+    Pickup and drop-off locations were visualized to uncover high-demand areas and geographic trip patterns.
+    Folium provided an interactive map:
+        Blue points represent pickup locations, while red points represent drop-off locations.
+        Dense clusters were observed around Manhattan, JFK Airport, and other key NYC landmarks.
+    Plotly enabled dynamic exploration:
+        Pickup and drop-off points were color-coded for better distinction.
+        Offered zoom and pan capabilities to analyze trip patterns in detail.
+    Key findings included frequent activity in urban centers and specific patterns like shorter trips within Manhattan and longer trips to and from airports.
+
 A/B Testing:
 
     The average trip durations for two groups (even vs. odd pickup hours) were compared. Minimal differences were observed, indicating pickup hour parity does not significantly impact trip lengths.
