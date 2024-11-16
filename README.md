@@ -49,8 +49,7 @@ Outlier Removal:
     Outliers were removed using the IQR method, ensuring extreme values did not dominate the analysis or skew results.
 
 Geospatial Analysis:
-![rer1](https://github.com/user-attachments/assets/5828fe99-5a52-4423-99c1-cd4379976f6b)
-
+![rer1](https://github.com/user-attachments/assets/841d363d-b205-464e-ab36-fe459591dab8)
 
 ![rer2](https://github.com/user-attachments/assets/bb226430-4d01-4fa4-987e-4fe4d35610cf)
 
