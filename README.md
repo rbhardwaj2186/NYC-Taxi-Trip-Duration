@@ -26,8 +26,6 @@ Feature Engineering:
     Categorize trips into short, medium, and long durations for simplified analysis.
 
 Outlier Removal:
-![Untitled](https://github.com/user-attachments/assets/6e8b59fc-774a-4dbe-84bd-5d1a2097af2f)
-
 
     Use the Interquartile Range (IQR) method to remove extreme trip durations, ensuring the data focuses on representative patterns.
 
