@@ -50,6 +50,8 @@ Outlier Removal:
 
 Geospatial Analysis:
 ![rer1](https://github.com/user-attachments/assets/5828fe99-5a52-4423-99c1-cd4379976f6b)
+
+
 ![rer2](https://github.com/user-attachments/assets/bb226430-4d01-4fa4-987e-4fe4d35610cf)
 
     Pickup and drop-off locations were visualized to uncover high-demand areas and geographic trip patterns.
