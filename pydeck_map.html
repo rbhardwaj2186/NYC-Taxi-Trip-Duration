@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>pydeck</title>
+        <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~9.0.*/dist/index.js'></script>
+    <style>
+    body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#deck-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+#deck-container canvas {
+  z-index: 1;
+  background: none;
+}
+    </style>
+  </head>
+  <body>
+    <div id="deck-container">
+    </div>
+  </body>
+  <script>
+    const container = document.getElementById('deck-container');
+    const jsonInput = {
+  "initialViewState": {
+    "latitude": 40.7128,
+    "longitude": -74.006,
+    "zoom": 12
+  },
+  "layers": [
+    {
+      "@@type": "ScatterplotLayer",
+      "data": [
+        {
+          "dropoff_latitude": 40.72701644897461,
+          "dropoff_longitude": -73.99149322509766,
+          "pickup_latitude": 40.73816299438477,
+          "pickup_longitude": -74.00421142578125
+        },
+        {
+          "dropoff_latitude": 40.70281600952149,
+          "dropoff_longitude": -73.83205413818358,
+          "pickup_latitude": 40.755046844482415,
+          "pickup_longitude": -73.9755859375
+        },
+        {
+          "dropoff_latitude": 40.7559700012207,
+          "dropoff_longitude": -73.98130798339844,
+          "pickup_latitude": 40.761810302734375,
+          "pickup_longitude": -73.96951293945312
+        },
+        {
+          "dropoff_latitude": 40.77595138549805,
+          "dropoff_longitude": -73.96033477783203,
+          "pickup_latitude": 40.72507095336913,
+          "pickup_longitude": -73.99571228027342
+        },
+        {
+          "dropoff_latitude": 40.78593826293945,
+          "dropoff_longitude": -73.94898223876955,
+          "pickup_latitude": 40.64699172973633,
+          "pickup_longitude": -73.79009246826173
+        },
+        {
+          "dropoff_latitude": 40.76164627075195,
+          "dropoff_longitude": -73.91016387939453,
+          "pickup_latitude": 40.78187561035156,
+          "pickup_longitude": -73.94876098632812
+        },
+        {
+          "dropoff_latitude": 40.70431900024415,
+          "dropoff_longitude": -74.00918579101562,
+          "pickup_latitude": 40.69134521484375,
+          "pickup_longitude": -73.99803924560547
+        },
+        {
+          "dropoff_latitude": 40.774356842041016,
+          "dropoff_longitude": -73.9537124633789,
+          "pickup_latitude": 40.76616668701172,
+          "pickup_longitude": -73.95703125
+        },
+        {
+          "dropoff_latitude": 40.707923889160156,
+          "dropoff_longitude": -74.01400756835938,
+          "pickup_latitude": 40.72808456420898,
+          "pickup_longitude": -74.0019989013672
+        },
+        {
+          "dropoff_latitude": 40.75270462036133,
+          "dropoff_longitude": -73.98155212402342,
+          "pickup_latitude": 40.74867248535156,
+          "pickup_longitude": -73.97218322753906
+        },
+        {
+          "dropoff_latitude": 40.7487907409668,
+          "dropoff_longitude": -73.97096252441406,
+          "pickup_latitude": 40.76650619506836,
+          "pickup_longitude": -73.96521759033203
+        },
+        {
+          "dropoff_latitude": 40.72603988647461,
+          "dropoff_longitude": -73.9744415283203,
+          "pickup_latitude": 40.81634140014648,
+          "pickup_longitude": -73.93441009521484
+        },
+        {
+          "dropoff_latitude": 40.73431396484375,
+          "dropoff_longitude": -73.9923095703125,
+          "pickup_latitude": 40.71499633789063,
+          "pickup_longitude": -74.00988006591797
+        },
+        {
+          "dropoff_latitude": 40.779541015625,
+          "dropoff_longitude": -73.95548248291014,
+          "pickup_latitude": 40.76691055297852,
+          "pickup_longitude": -73.9539794921875
+        },
+        {
+          "dropoff_latitude": 40.76729583740234,
+          "dropoff_longitude": -73.9842300415039,
+          "pickup_latitude": 40.78276062011719,
+          "pickup_longitude": -73.97843933105469
+        },
+        {
+          "dropoff_latitude": 40.748130798339844,
+          "dropoff_longitude": -73.97108459472656,
+          "pickup_latitude": 40.762451171875,
+          "pickup_longitude": -73.9677505493164
+        },
+        {
+          "dropoff_latitude": 40.75201034545898,
+          "dropoff_longitude": -74.00475311279298,
+          "pickup_latitude": 40.75524139404297,
+          "pickup_longitude": -73.99468231201173
+        },
+        {
+          "dropoff_latitude": 40.7877082824707,
+          "dropoff_longitude": -73.95549011230467,
+          "pickup_latitude": 40.76942825317383,
+          "pickup_longitude": -73.98827362060547
+        },
+        {
+          "dropoff_latitude": 40.744773864746094,
+          "dropoff_longitude": -73.98091888427734,
+          "pickup_latitude": 40.72572326660156,
+          "pickup_longitude": -74.0039520263672
+        },
+        {
+          "dropoff_latitude": 40.72154998779297,
+          "dropoff_longitude": -73.98361206054686,
+          "pickup_latitude": 40.73098373413085,
+          "pickup_longitude": -73.98271179199219
+        },
+        {
+          "dropoff_latitude": 40.76329803466797,
+          "dropoff_longitude": -73.96737670898438,
+          "pickup_latitude": 40.76197052001953,
+          "pickup_longitude": -73.97267150878906
+        },
+        {
+          "dropoff_latitude": 40.779396057128906,
+          "dropoff_longitude": -73.9593734741211,
+          "pickup_latitude": 40.77413558959961,
+          "pickup_longitude": -73.9455337524414
+        },
+        {
+          "dropoff_latitude": 40.772132873535156,
+          "dropoff_longitude": -73.98589324951173,
+          "pickup_latitude": 40.76807022094727,
+          "pickup_longitude": -73.96631622314453
+        },
+        {
+          "dropoff_latitude": 40.78066635131836,
+          "dropoff_longitude": -73.96125030517578,
+          "pickup_latitude": 40.767826080322266,
+          "pickup_longitude": -73.98170471191406
+        },
+        {
+          "dropoff_latitude": 40.73188018798828,
+          "dropoff_longitude": -73.98542022705078,
+          "pickup_latitude": 40.741432189941406,
+          "pickup_longitude": -73.9892578125
+        },
+        {
+          "dropoff_latitude": 40.72146224975585,
+          "dropoff_longitude": -74.01023864746094,
+          "pickup_latitude": 40.76930236816406,
+          "pickup_longitude": -73.95195770263672
+        },
+        {
+          "dropoff_latitude": 40.7411003112793,
+          "dropoff_longitude": -73.99774932861328,
+          "pickup_latitude": 40.74811172485352,
+          "pickup_longitude": -73.98088836669923
+        },
+        {
+          "dropoff_latitude": 40.75261306762695,
+          "dropoff_longitude": -73.97554779052734,
+          "pickup_latitude": 40.755516052246094,
+          "pickup_longitude": -73.96806335449219
+        },
+        {
+          "dropoff_latitude": 40.73043441772461,
+          "dropoff_longitude": -73.98619079589844,
+          "pickup_latitude": 40.73765563964844,
+          "pickup_longitude": -73.99012756347656
+        },
+        {
+          "dropoff_latitude": 40.71816635131836,
+          "dropoff_longitude": -74.01486206054686,
+          "pickup_latitude": 40.76709365844727,
+          "pickup_longitude": -73.98189544677734
+        },
+        {
+          "dropoff_latitude": 40.77050018310547,
+          "dropoff_longitude": -73.9918212890625,
+          "pickup_latitude": 40.73992156982422,
+          "pickup_longitude": -73.99498748779298
+        },
+        {
+          "dropoff_latitude": 40.680339813232415,
+          "dropoff_longitude": -73.98117828369139,
+          "pickup_latitude": 40.73191452026367,
+          "pickup_longitude": -73.9822540283203
+        },
+        {
+          "dropoff_latitude": 40.7793197631836,
+          "dropoff_longitude": -73.97718048095702,
+          "pickup_latitude": 40.769439697265625,
+          "pickup_longitude": -73.96077728271484
+        },
+        {
+          "dropoff_latitude": 40.7255859375,
+          "dropoff_longitude": -73.99656677246094,
+          "pickup_latitude": 40.76297378540039,
+          "pickup_longitude": -73.98147583007811
+        },
+        {
+          "dropoff_latitude": 40.71032333374024,
+          "dropoff_longitude": -74.01764678955078,
+          "pickup_latitude": 40.75788879394531,
+          "pickup_longitude": -73.97766876220702
+        },
+        {
+          "dropoff_latitude": 40.7398681640625,
+          "dropoff_longitude": -73.9894027709961,
+          "pickup_latitude": 40.72209930419922,
+          "pickup_longitude": -73.9971923828125
+        },
+        {
+          "dropoff_latitude": 40.75701141357422,
+          "dropoff_longitude": -73.9681625366211,
+          "pickup_latitude": 40.75751876831055,
+          "pickup_longitude": -73.98954010009766
+        },
+        {
+          "dropoff_latitude": 40.74561309814453,
+          "dropoff_longitude": -73.9891586303711,
+          "pickup_latitude": 40.73622131347656,
+          "pickup_longitude": -73.99349212646483
+        },
+        {
+          "dropoff_latitude": 40.77265548706055,
+          "dropoff_longitude": -73.9558868408203,
+          "pickup_latitude": 40.74622344970703,
+          "pickup_longitude": -73.97998046875
+        },
+        {
+          "dropoff_latitude": 40.7305793762207,
+          "dropoff_longitude": -74.00463104248048,
+          "pickup_latitude": 40.75226974487305,
+          "pickup_longitude": -73.97073364257811
+        },
+        {
+          "dropoff_latitude": 40.71529769897461,
+          "dropoff_longitude": -74.01337432861328,
+          "pickup_latitude": 40.73960876464844,
+          "pickup_longitude": -73.98267364501955
+        },
+        {
+          "dropoff_latitude": 40.75038146972656,
+          "dropoff_longitude": -73.99142456054686,
+          "pickup_latitude": 40.75375747680664,
+          "pickup_longitude": -73.97772216796875
+        },
+        {
+          "dropoff_latitude": 40.807125091552734,
+          "dropoff_longitude": -73.96430969238281,
+          "pickup_latitude": 40.79908752441406,
+          "pickup_longitude": -73.96673583984375
+        },
+        {
+          "dropoff_latitude": 40.75598526000977,
+          "dropoff_longitude": -73.97886657714845,
+          "pickup_latitude": 40.776309967041016,
+          "pickup_longitude": -73.98764038085938
+        },
+        {
+          "dropoff_latitude": 40.75535202026367,
+          "dropoff_longitude": -73.97595977783203,
+          "pickup_latitude": 40.76500701904297,
+          "pickup_longitude": -73.96839141845702
+        },
+        {
+          "dropoff_latitude": 40.729591369628906,
+          "dropoff_longitude": -73.98635101318358,
+          "pickup_latitude": 40.74011993408203,
+          "pickup_longitude": -73.99861145019531
+        },
+        {
+          "dropoff_latitude": 40.72275161743164,
+          "dropoff_longitude": -73.99801635742188,
+          "pickup_latitude": 40.72420883178711,
+          "pickup_longitude": -74.00765991210938
+        },
+        {
+          "dropoff_latitude": 40.78778839111328,
+          "dropoff_longitude": -73.97306823730467,
+          "pickup_latitude": 40.79399871826172,
+          "pickup_longitude": -73.96699523925781
+        },
+        {
+          "dropoff_latitude": 40.75934600830078,
+          "dropoff_longitude": -73.99578094482422,
+          "pickup_latitude": 40.75105667114258,
+          "pickup_longitude": -73.99102783203125
+        },
+        {
+          "dropoff_latitude": 40.7283935546875,
+          "dropoff_longitude": -73.99956512451173,
+          "pickup_latitude": 40.74081802368164,
+          "pickup_longitude": -74.007568359375
+        },
+        {
+          "dropoff_latitude": 40.74673843383789,
+          "dropoff_longitude": -73.97953033447266,
+          "pickup_latitude": 40.76467514038085,
+          "pickup_longitude": -73.9664077758789
+        },
+        {
+          "dropoff_latitude": 40.76570129394531,
+          "dropoff_longitude": -73.97160339355469,
+          "pickup_latitude": 40.76031112670898,
+          "pickup_longitude": -74.00293731689453
+        },
+        {
+          "dropoff_latitude": 40.84621810913085,
+          "dropoff_longitude": -73.9400863647461,
+          "pickup_latitude": 40.76763916015625,
+          "pickup_longitude": -73.95598602294923
+        },
+        {
+          "dropoff_latitude": 40.79941940307617,
+          "dropoff_longitude": -73.9436264038086,
+          "pickup_latitude": 40.72726058959961,
+          "pickup_longitude": -73.99347686767578
+        },
+        {
+          "dropoff_latitude": 40.72340774536133,
+          "dropoff_longitude": -73.9898452758789,
+          "pickup_latitude": 40.78661346435547,
+          "pickup_longitude": -73.95040893554686
+        },
+        {
+          "dropoff_latitude": 40.76924514770508,
+          "dropoff_longitude": -73.9635467529297,
+          "pickup_latitude": 40.764793395996094,
+          "pickup_longitude": -73.97685241699219
+        },
+        {
+          "dropoff_latitude": 40.75517272949219,
+          "dropoff_longitude": -73.97514343261719,
+          "pickup_latitude": 40.71626281738281,
+          "pickup_longitude": -73.99595642089844
+        },
+        {
+          "dropoff_latitude": 40.77029418945313,
+          "dropoff_longitude": -73.86475372314453,
+          "pickup_latitude": 40.73285675048828,
+          "pickup_longitude": -73.99396514892578
+        },
+        {
+          "dropoff_latitude": 40.7479248046875,
+          "dropoff_longitude": -73.97356414794923,
+          "pickup_latitude": 40.73310089111328,
+          "pickup_longitude": -73.98756408691406
+        },
+        {
+          "dropoff_latitude": 40.75054168701172,
+          "dropoff_longitude": -73.97000885009766,
+          "pickup_latitude": 40.7253303527832,
+          "pickup_longitude": -73.99256134033203
+        },
+        {
+          "dropoff_latitude": 40.76421356201172,
+          "dropoff_longitude": -73.95955657958984,
+          "pickup_latitude": 40.78268051147461,
+          "pickup_longitude": -73.95552062988281
+        },
+        {
+          "dropoff_latitude": 40.75556564331055,
+          "dropoff_longitude": -73.96821594238281,
+          "pickup_latitude": 40.73213577270508,
+          "pickup_longitude": -73.98200988769531
+        },
+        {
+          "dropoff_latitude": 40.77698135375977,
+          "dropoff_longitude": -73.98230743408203,
+          "pickup_latitude": 40.78635787963867,
+          "pickup_longitude": -73.97823333740234
+        },
+        {
+          "dropoff_latitude": 40.77418518066406,
+          "dropoff_longitude": -73.95787048339844,
+          "pickup_latitude": 40.78525161743164,
+          "pickup_longitude": -73.95570373535155
+        },
+        {
+          "dropoff_latitude": 40.761817932128906,
+          "dropoff_longitude": -73.99771881103516,
+          "pickup_latitude": 40.713462829589844,
+          "pickup_longitude": -74.01412963867188
+        },
+        {
+          "dropoff_latitude": 40.74193572998047,
+          "dropoff_longitude": -74.00459289550781,
+          "pickup_latitude": 40.76524353027344,
+          "pickup_longitude": -73.97518920898438
+        },
+        {
+          "dropoff_latitude": 40.71739959716797,
+          "dropoff_longitude": -74.00711822509766,
+          "pickup_latitude": 40.75849914550781,
+          "pickup_longitude": -73.98626708984375
+        },
+        {
+          "dropoff_latitude": 40.7773666381836,
+          "dropoff_longitude": -73.97527313232422,
+          "pickup_latitude": 40.76511001586913,
+          "pickup_longitude": -73.97669982910156
+        },
+        {
+          "dropoff_latitude": 40.76063919067383,
+          "dropoff_longitude": -73.9607925415039,
+          "pickup_latitude": 40.78050231933594,
+          "pickup_longitude": -73.9463348388672
+        },
+        {
+          "dropoff_latitude": 40.762306213378906,
+          "dropoff_longitude": -73.95712280273438,
+          "pickup_latitude": 40.77615356445313,
+          "pickup_longitude": -73.95011901855469
+        },
+        {
+          "dropoff_latitude": 40.77527618408203,
+          "dropoff_longitude": -73.99060821533203,
+          "pickup_latitude": 40.74162673950195,
+          "pickup_longitude": -74.00496673583984
+        },
+        {
+          "dropoff_latitude": 40.74416732788085,
+          "dropoff_longitude": -73.98206329345702,
+          "pickup_latitude": 40.771987915039055,
+          "pickup_longitude": -73.9827651977539
+        },
+        {
+          "dropoff_latitude": 40.78121566772461,
+          "dropoff_longitude": -73.97988891601562,
+          "pickup_latitude": 40.73450088500977,
+          "pickup_longitude": -74.00109100341797
+        },
+        {
+          "dropoff_latitude": 40.755470275878906,
+          "dropoff_longitude": -73.99285125732422,
+          "pickup_latitude": 40.70870971679688,
+          "pickup_longitude": -74.01084899902342
+        },
+        {
+          "dropoff_latitude": 40.74362564086913,
+          "dropoff_longitude": -73.98993682861328,
+          "pickup_latitude": 40.796085357666016,
+          "pickup_longitude": -73.97099304199219
+        },
+        {
+          "dropoff_latitude": 40.78794860839844,
+          "dropoff_longitude": -73.97701263427734,
+          "pickup_latitude": 40.73650741577149,
+          "pickup_longitude": -73.98173522949219
+        },
+        {
+          "dropoff_latitude": 40.731178283691406,
+          "dropoff_longitude": -73.95774841308594,
+          "pickup_latitude": 40.74578094482422,
+          "pickup_longitude": -73.9887466430664
+        },
+        {
+          "dropoff_latitude": 40.71141052246094,
+          "dropoff_longitude": -74.01595306396483,
+          "pickup_latitude": 40.740638732910156,
+          "pickup_longitude": -74.00776672363281
+        },
+        {
+          "dropoff_latitude": 40.79707717895508,
+          "dropoff_longitude": -73.96997833251955,
+          "pickup_latitude": 40.72742080688477,
+          "pickup_longitude": -74.00509643554686
+        },
+        {
+          "dropoff_latitude": 40.84101867675781,
+          "dropoff_longitude": -73.94007873535155,
+          "pickup_latitude": 40.778480529785156,
+          "pickup_longitude": -73.98165130615234
+        },
+        {
+          "dropoff_latitude": 40.79341125488281,
+          "dropoff_longitude": -73.96898651123048,
+          "pickup_latitude": 40.77928924560547,
+          "pickup_longitude": -73.98330688476562
+        },
+        {
+          "dropoff_latitude": 40.78947830200195,
+          "dropoff_longitude": -73.95244598388672,
+          "pickup_latitude": 40.779800415039055,
+          "pickup_longitude": -73.98059844970702
+        },
+        {
+          "dropoff_latitude": 40.76137161254883,
+          "dropoff_longitude": -73.99739837646483,
+          "pickup_latitude": 40.74539566040039,
+          "pickup_longitude": -73.99122619628906
+        },
+        {
+          "dropoff_latitude": 40.76158142089844,
+          "dropoff_longitude": -73.97454833984375,
+          "pickup_latitude": 40.76974105834961,
+          "pickup_longitude": -73.9647216796875
+        },
+        {
+          "dropoff_latitude": 40.7672119140625,
+          "dropoff_longitude": -73.96649932861328,
+          "pickup_latitude": 40.74592971801758,
+          "pickup_longitude": -73.98633575439453
+        },
+        {
+          "dropoff_latitude": 40.780948638916016,
+          "dropoff_longitude": -73.9588165283203,
+          "pickup_latitude": 40.75212097167969,
+          "pickup_longitude": -73.97692108154298
+        },
+        {
+          "dropoff_latitude": 40.70567321777344,
+          "dropoff_longitude": -74.00820922851562,
+          "pickup_latitude": 40.74029541015625,
+          "pickup_longitude": -74.00576782226562
+        },
+        {
+          "dropoff_latitude": 40.73323059082031,
+          "dropoff_longitude": -74.00450134277344,
+          "pickup_latitude": 40.75185775756836,
+          "pickup_longitude": -73.98236083984375
+        },
+        {
+          "dropoff_latitude": 40.76137161254883,
+          "dropoff_longitude": -73.97437286376955,
+          "pickup_latitude": 40.77407455444336,
+          "pickup_longitude": -73.94522857666014
+        },
+        {
+          "dropoff_latitude": 40.76807022094727,
+          "dropoff_longitude": -73.86132049560547,
+          "pickup_latitude": 40.76780319213867,
+          "pickup_longitude": -73.98511505126955
+        },
+        {
+          "dropoff_latitude": 40.72815322875977,
+          "dropoff_longitude": -73.99910736083984,
+          "pickup_latitude": 40.77204132080078,
+          "pickup_longitude": -73.9827880859375
+        },
+        {
+          "dropoff_latitude": 40.75102996826172,
+          "dropoff_longitude": -73.97461700439453,
+          "pickup_latitude": 40.71442031860352,
+          "pickup_longitude": -74.00743865966798
+        },
+        {
+          "dropoff_latitude": 40.77857971191406,
+          "dropoff_longitude": -73.95406341552734,
+          "pickup_latitude": 40.72351837158203,
+          "pickup_longitude": -74.00286102294923
+        },
+        {
+          "dropoff_latitude": 40.721927642822266,
+          "dropoff_longitude": -73.99649047851562,
+          "pickup_latitude": 40.7588005065918,
+          "pickup_longitude": -73.98841857910156
+        },
+        {
+          "dropoff_latitude": 40.76931381225585,
+          "dropoff_longitude": -73.98319244384766,
+          "pickup_latitude": 40.76395034790039,
+          "pickup_longitude": -73.97760009765625
+        },
+        {
+          "dropoff_latitude": 40.78023910522461,
+          "dropoff_longitude": -73.98046875,
+          "pickup_latitude": 40.75157928466797,
+          "pickup_longitude": -73.98661804199219
+        },
+        {
+          "dropoff_latitude": 40.774391174316406,
+          "dropoff_longitude": -73.9554214477539,
+          "pickup_latitude": 40.77012634277344,
+          "pickup_longitude": -73.96443176269531
+        },
+        {
+          "dropoff_latitude": 40.76844024658203,
+          "dropoff_longitude": -73.98478698730467,
+          "pickup_latitude": 40.74502944946289,
+          "pickup_longitude": -73.9879608154297
+        },
+        {
+          "dropoff_latitude": 40.736854553222656,
+          "dropoff_longitude": -73.9787368774414,
+          "pickup_latitude": 40.728004455566406,
+          "pickup_longitude": -73.9947509765625
+        },
+        {
+          "dropoff_latitude": 40.69013977050781,
+          "dropoff_longitude": -73.99215698242188,
+          "pickup_latitude": 40.75017929077149,
+          "pickup_longitude": -73.9915313720703
+        }
+      ],
+      "getColor": [
+        0,
+        0,
+        255
+      ],
+      "getPosition": "@@=[pickup_longitude, pickup_latitude]",
+      "getRadius": 100,
+      "id": "fe24aec4-0825-4da0-b3a0-8c0dfb4e6ac8",
+      "pickable": true
+    },
+    {
+      "@@type": "ScatterplotLayer",
+      "data": [
+        {
+          "dropoff_latitude": 40.72701644897461,
+          "dropoff_longitude": -73.99149322509766,
+          "pickup_latitude": 40.73816299438477,
+          "pickup_longitude": -74.00421142578125
+        },
+        {
+          "dropoff_latitude": 40.70281600952149,
+          "dropoff_longitude": -73.83205413818358,
+          "pickup_latitude": 40.755046844482415,
+          "pickup_longitude": -73.9755859375
+        },
+        {
+          "dropoff_latitude": 40.7559700012207,
+          "dropoff_longitude": -73.98130798339844,
+          "pickup_latitude": 40.761810302734375,
+          "pickup_longitude": -73.96951293945312
+        },
+        {
+          "dropoff_latitude": 40.77595138549805,
+          "dropoff_longitude": -73.96033477783203,
+          "pickup_latitude": 40.72507095336913,
+          "pickup_longitude": -73.99571228027342
+        },
+        {
+          "dropoff_latitude": 40.78593826293945,
+          "dropoff_longitude": -73.94898223876955,
+          "pickup_latitude": 40.64699172973633,
+          "pickup_longitude": -73.79009246826173
+        },
+        {
+          "dropoff_latitude": 40.76164627075195,
+          "dropoff_longitude": -73.91016387939453,
+          "pickup_latitude": 40.78187561035156,
+          "pickup_longitude": -73.94876098632812
+        },
+        {
+          "dropoff_latitude": 40.70431900024415,
+          "dropoff_longitude": -74.00918579101562,
+          "pickup_latitude": 40.69134521484375,
+          "pickup_longitude": -73.99803924560547
+        },
+        {
+          "dropoff_latitude": 40.774356842041016,
+          "dropoff_longitude": -73.9537124633789,
+          "pickup_latitude": 40.76616668701172,
+          "pickup_longitude": -73.95703125
+        },
+        {
+          "dropoff_latitude": 40.707923889160156,
+          "dropoff_longitude": -74.01400756835938,
+          "pickup_latitude": 40.72808456420898,
+          "pickup_longitude": -74.0019989013672
+        },
+        {
+          "dropoff_latitude": 40.75270462036133,
+          "dropoff_longitude": -73.98155212402342,
+          "pickup_latitude": 40.74867248535156,
+          "pickup_longitude": -73.97218322753906
+        },
+        {
+          "dropoff_latitude": 40.7487907409668,
+          "dropoff_longitude": -73.97096252441406,
+          "pickup_latitude": 40.76650619506836,
+          "pickup_longitude": -73.96521759033203
+        },
+        {
+          "dropoff_latitude": 40.72603988647461,
+          "dropoff_longitude": -73.9744415283203,
+          "pickup_latitude": 40.81634140014648,
+          "pickup_longitude": -73.93441009521484
+        },
+        {
+          "dropoff_latitude": 40.73431396484375,
+          "dropoff_longitude": -73.9923095703125,
+          "pickup_latitude": 40.71499633789063,
+          "pickup_longitude": -74.00988006591797
+        },
+        {
+          "dropoff_latitude": 40.779541015625,
+          "dropoff_longitude": -73.95548248291014,
+          "pickup_latitude": 40.76691055297852,
+          "pickup_longitude": -73.9539794921875
+        },
+        {
+          "dropoff_latitude": 40.76729583740234,
+          "dropoff_longitude": -73.9842300415039,
+          "pickup_latitude": 40.78276062011719,
+          "pickup_longitude": -73.97843933105469
+        },
+        {
+          "dropoff_latitude": 40.748130798339844,
+          "dropoff_longitude": -73.97108459472656,
+          "pickup_latitude": 40.762451171875,
+          "pickup_longitude": -73.9677505493164
+        },
+        {
+          "dropoff_latitude": 40.75201034545898,
+          "dropoff_longitude": -74.00475311279298,
+          "pickup_latitude": 40.75524139404297,
+          "pickup_longitude": -73.99468231201173
+        },
+        {
+          "dropoff_latitude": 40.7877082824707,
+          "dropoff_longitude": -73.95549011230467,
+          "pickup_latitude": 40.76942825317383,
+          "pickup_longitude": -73.98827362060547
+        },
+        {
+          "dropoff_latitude": 40.744773864746094,
+          "dropoff_longitude": -73.98091888427734,
+          "pickup_latitude": 40.72572326660156,
+          "pickup_longitude": -74.0039520263672
+        },
+        {
+          "dropoff_latitude": 40.72154998779297,
+          "dropoff_longitude": -73.98361206054686,
+          "pickup_latitude": 40.73098373413085,
+          "pickup_longitude": -73.98271179199219
+        },
+        {
+          "dropoff_latitude": 40.76329803466797,
+          "dropoff_longitude": -73.96737670898438,
+          "pickup_latitude": 40.76197052001953,
+          "pickup_longitude": -73.97267150878906
+        },
+        {
+          "dropoff_latitude": 40.779396057128906,
+          "dropoff_longitude": -73.9593734741211,
+          "pickup_latitude": 40.77413558959961,
+          "pickup_longitude": -73.9455337524414
+        },
+        {
+          "dropoff_latitude": 40.772132873535156,
+          "dropoff_longitude": -73.98589324951173,
+          "pickup_latitude": 40.76807022094727,
+          "pickup_longitude": -73.96631622314453
+        },
+        {
+          "dropoff_latitude": 40.78066635131836,
+          "dropoff_longitude": -73.96125030517578,
+          "pickup_latitude": 40.767826080322266,
+          "pickup_longitude": -73.98170471191406
+        },
+        {
+          "dropoff_latitude": 40.73188018798828,
+          "dropoff_longitude": -73.98542022705078,
+          "pickup_latitude": 40.741432189941406,
+          "pickup_longitude": -73.9892578125
+        },
+        {
+          "dropoff_latitude": 40.72146224975585,
+          "dropoff_longitude": -74.01023864746094,
+          "pickup_latitude": 40.76930236816406,
+          "pickup_longitude": -73.95195770263672
+        },
+        {
+          "dropoff_latitude": 40.7411003112793,
+          "dropoff_longitude": -73.99774932861328,
+          "pickup_latitude": 40.74811172485352,
+          "pickup_longitude": -73.98088836669923
+        },
+        {
+          "dropoff_latitude": 40.75261306762695,
+          "dropoff_longitude": -73.97554779052734,
+          "pickup_latitude": 40.755516052246094,
+          "pickup_longitude": -73.96806335449219
+        },
+        {
+          "dropoff_latitude": 40.73043441772461,
+          "dropoff_longitude": -73.98619079589844,
+          "pickup_latitude": 40.73765563964844,
+          "pickup_longitude": -73.99012756347656
+        },
+        {
+          "dropoff_latitude": 40.71816635131836,
+          "dropoff_longitude": -74.01486206054686,
+          "pickup_latitude": 40.76709365844727,
+          "pickup_longitude": -73.98189544677734
+        },
+        {
+          "dropoff_latitude": 40.77050018310547,
+          "dropoff_longitude": -73.9918212890625,
+          "pickup_latitude": 40.73992156982422,
+          "pickup_longitude": -73.99498748779298
+        },
+        {
+          "dropoff_latitude": 40.680339813232415,
+          "dropoff_longitude": -73.98117828369139,
+          "pickup_latitude": 40.73191452026367,
+          "pickup_longitude": -73.9822540283203
+        },
+        {
+          "dropoff_latitude": 40.7793197631836,
+          "dropoff_longitude": -73.97718048095702,
+          "pickup_latitude": 40.769439697265625,
+          "pickup_longitude": -73.96077728271484
+        },
+        {
+          "dropoff_latitude": 40.7255859375,
+          "dropoff_longitude": -73.99656677246094,
+          "pickup_latitude": 40.76297378540039,
+          "pickup_longitude": -73.98147583007811
+        },
+        {
+          "dropoff_latitude": 40.71032333374024,
+          "dropoff_longitude": -74.01764678955078,
+          "pickup_latitude": 40.75788879394531,
+          "pickup_longitude": -73.97766876220702
+        },
+        {
+          "dropoff_latitude": 40.7398681640625,
+          "dropoff_longitude": -73.9894027709961,
+          "pickup_latitude": 40.72209930419922,
+          "pickup_longitude": -73.9971923828125
+        },
+        {
+          "dropoff_latitude": 40.75701141357422,
+          "dropoff_longitude": -73.9681625366211,
+          "pickup_latitude": 40.75751876831055,
+          "pickup_longitude": -73.98954010009766
+        },
+        {
+          "dropoff_latitude": 40.74561309814453,
+          "dropoff_longitude": -73.9891586303711,
+          "pickup_latitude": 40.73622131347656,
+          "pickup_longitude": -73.99349212646483
+        },
+        {
+          "dropoff_latitude": 40.77265548706055,
+          "dropoff_longitude": -73.9558868408203,
+          "pickup_latitude": 40.74622344970703,
+          "pickup_longitude": -73.97998046875
+        },
+        {
+          "dropoff_latitude": 40.7305793762207,
+          "dropoff_longitude": -74.00463104248048,
+          "pickup_latitude": 40.75226974487305,
+          "pickup_longitude": -73.97073364257811
+        },
+        {
+          "dropoff_latitude": 40.71529769897461,
+          "dropoff_longitude": -74.01337432861328,
+          "pickup_latitude": 40.73960876464844,
+          "pickup_longitude": -73.98267364501955
+        },
+        {
+          "dropoff_latitude": 40.75038146972656,
+          "dropoff_longitude": -73.99142456054686,
+          "pickup_latitude": 40.75375747680664,
+          "pickup_longitude": -73.97772216796875
+        },
+        {
+          "dropoff_latitude": 40.807125091552734,
+          "dropoff_longitude": -73.96430969238281,
+          "pickup_latitude": 40.79908752441406,
+          "pickup_longitude": -73.96673583984375
+        },
+        {
+          "dropoff_latitude": 40.75598526000977,
+          "dropoff_longitude": -73.97886657714845,
+          "pickup_latitude": 40.776309967041016,
+          "pickup_longitude": -73.98764038085938
+        },
+        {
+          "dropoff_latitude": 40.75535202026367,
+          "dropoff_longitude": -73.97595977783203,
+          "pickup_latitude": 40.76500701904297,
+          "pickup_longitude": -73.96839141845702
+        },
+        {
+          "dropoff_latitude": 40.729591369628906,
+          "dropoff_longitude": -73.98635101318358,
+          "pickup_latitude": 40.74011993408203,
+          "pickup_longitude": -73.99861145019531
+        },
+        {
+          "dropoff_latitude": 40.72275161743164,
+          "dropoff_longitude": -73.99801635742188,
+          "pickup_latitude": 40.72420883178711,
+          "pickup_longitude": -74.00765991210938
+        },
+        {
+          "dropoff_latitude": 40.78778839111328,
+          "dropoff_longitude": -73.97306823730467,
+          "pickup_latitude": 40.79399871826172,
+          "pickup_longitude": -73.96699523925781
+        },
+        {
+          "dropoff_latitude": 40.75934600830078,
+          "dropoff_longitude": -73.99578094482422,
+          "pickup_latitude": 40.75105667114258,
+          "pickup_longitude": -73.99102783203125
+        },
+        {
+          "dropoff_latitude": 40.7283935546875,
+          "dropoff_longitude": -73.99956512451173,
+          "pickup_latitude": 40.74081802368164,
+          "pickup_longitude": -74.007568359375
+        },
+        {
+          "dropoff_latitude": 40.74673843383789,
+          "dropoff_longitude": -73.97953033447266,
+          "pickup_latitude": 40.76467514038085,
+          "pickup_longitude": -73.9664077758789
+        },
+        {
+          "dropoff_latitude": 40.76570129394531,
+          "dropoff_longitude": -73.97160339355469,
+          "pickup_latitude": 40.76031112670898,
+          "pickup_longitude": -74.00293731689453
+        },
+        {
+          "dropoff_latitude": 40.84621810913085,
+          "dropoff_longitude": -73.9400863647461,
+          "pickup_latitude": 40.76763916015625,
+          "pickup_longitude": -73.95598602294923
+        },
+        {
+          "dropoff_latitude": 40.79941940307617,
+          "dropoff_longitude": -73.9436264038086,
+          "pickup_latitude": 40.72726058959961,
+          "pickup_longitude": -73.99347686767578
+        },
+        {
+          "dropoff_latitude": 40.72340774536133,
+          "dropoff_longitude": -73.9898452758789,
+          "pickup_latitude": 40.78661346435547,
+          "pickup_longitude": -73.95040893554686
+        },
+        {
+          "dropoff_latitude": 40.76924514770508,
+          "dropoff_longitude": -73.9635467529297,
+          "pickup_latitude": 40.764793395996094,
+          "pickup_longitude": -73.97685241699219
+        },
+        {
+          "dropoff_latitude": 40.75517272949219,
+          "dropoff_longitude": -73.97514343261719,
+          "pickup_latitude": 40.71626281738281,
+          "pickup_longitude": -73.99595642089844
+        },
+        {
+          "dropoff_latitude": 40.77029418945313,
+          "dropoff_longitude": -73.86475372314453,
+          "pickup_latitude": 40.73285675048828,
+          "pickup_longitude": -73.99396514892578
+        },
+        {
+          "dropoff_latitude": 40.7479248046875,
+          "dropoff_longitude": -73.97356414794923,
+          "pickup_latitude": 40.73310089111328,
+          "pickup_longitude": -73.98756408691406
+        },
+        {
+          "dropoff_latitude": 40.75054168701172,
+          "dropoff_longitude": -73.97000885009766,
+          "pickup_latitude": 40.7253303527832,
+          "pickup_longitude": -73.99256134033203
+        },
+        {
+          "dropoff_latitude": 40.76421356201172,
+          "dropoff_longitude": -73.95955657958984,
+          "pickup_latitude": 40.78268051147461,
+          "pickup_longitude": -73.95552062988281
+        },
+        {
+          "dropoff_latitude": 40.75556564331055,
+          "dropoff_longitude": -73.96821594238281,
+          "pickup_latitude": 40.73213577270508,
+          "pickup_longitude": -73.98200988769531
+        },
+        {
+          "dropoff_latitude": 40.77698135375977,
+          "dropoff_longitude": -73.98230743408203,
+          "pickup_latitude": 40.78635787963867,
+          "pickup_longitude": -73.97823333740234
+        },
+        {
+          "dropoff_latitude": 40.77418518066406,
+          "dropoff_longitude": -73.95787048339844,
+          "pickup_latitude": 40.78525161743164,
+          "pickup_longitude": -73.95570373535155
+        },
+        {
+          "dropoff_latitude": 40.761817932128906,
+          "dropoff_longitude": -73.99771881103516,
+          "pickup_latitude": 40.713462829589844,
+          "pickup_longitude": -74.01412963867188
+        },
+        {
+          "dropoff_latitude": 40.74193572998047,
+          "dropoff_longitude": -74.00459289550781,
+          "pickup_latitude": 40.76524353027344,
+          "pickup_longitude": -73.97518920898438
+        },
+        {
+          "dropoff_latitude": 40.71739959716797,
+          "dropoff_longitude": -74.00711822509766,
+          "pickup_latitude": 40.75849914550781,
+          "pickup_longitude": -73.98626708984375
+        },
+        {
+          "dropoff_latitude": 40.7773666381836,
+          "dropoff_longitude": -73.97527313232422,
+          "pickup_latitude": 40.76511001586913,
+          "pickup_longitude": -73.97669982910156
+        },
+        {
+          "dropoff_latitude": 40.76063919067383,
+          "dropoff_longitude": -73.9607925415039,
+          "pickup_latitude": 40.78050231933594,
+          "pickup_longitude": -73.9463348388672
+        },
+        {
+          "dropoff_latitude": 40.762306213378906,
+          "dropoff_longitude": -73.95712280273438,
+          "pickup_latitude": 40.77615356445313,
+          "pickup_longitude": -73.95011901855469
+        },
+        {
+          "dropoff_latitude": 40.77527618408203,
+          "dropoff_longitude": -73.99060821533203,
+          "pickup_latitude": 40.74162673950195,
+          "pickup_longitude": -74.00496673583984
+        },
+        {
+          "dropoff_latitude": 40.74416732788085,
+          "dropoff_longitude": -73.98206329345702,
+          "pickup_latitude": 40.771987915039055,
+          "pickup_longitude": -73.9827651977539
+        },
+        {
+          "dropoff_latitude": 40.78121566772461,
+          "dropoff_longitude": -73.97988891601562,
+          "pickup_latitude": 40.73450088500977,
+          "pickup_longitude": -74.00109100341797
+        },
+        {
+          "dropoff_latitude": 40.755470275878906,
+          "dropoff_longitude": -73.99285125732422,
+          "pickup_latitude": 40.70870971679688,
+          "pickup_longitude": -74.01084899902342
+        },
+        {
+          "dropoff_latitude": 40.74362564086913,
+          "dropoff_longitude": -73.98993682861328,
+          "pickup_latitude": 40.796085357666016,
+          "pickup_longitude": -73.97099304199219
+        },
+        {
+          "dropoff_latitude": 40.78794860839844,
+          "dropoff_longitude": -73.97701263427734,
+          "pickup_latitude": 40.73650741577149,
+          "pickup_longitude": -73.98173522949219
+        },
+        {
+          "dropoff_latitude": 40.731178283691406,
+          "dropoff_longitude": -73.95774841308594,
+          "pickup_latitude": 40.74578094482422,
+          "pickup_longitude": -73.9887466430664
+        },
+        {
+          "dropoff_latitude": 40.71141052246094,
+          "dropoff_longitude": -74.01595306396483,
+          "pickup_latitude": 40.740638732910156,
+          "pickup_longitude": -74.00776672363281
+        },
+        {
+          "dropoff_latitude": 40.79707717895508,
+          "dropoff_longitude": -73.96997833251955,
+          "pickup_latitude": 40.72742080688477,
+          "pickup_longitude": -74.00509643554686
+        },
+        {
+          "dropoff_latitude": 40.84101867675781,
+          "dropoff_longitude": -73.94007873535155,
+          "pickup_latitude": 40.778480529785156,
+          "pickup_longitude": -73.98165130615234
+        },
+        {
+          "dropoff_latitude": 40.79341125488281,
+          "dropoff_longitude": -73.96898651123048,
+          "pickup_latitude": 40.77928924560547,
+          "pickup_longitude": -73.98330688476562
+        },
+        {
+          "dropoff_latitude": 40.78947830200195,
+          "dropoff_longitude": -73.95244598388672,
+          "pickup_latitude": 40.779800415039055,
+          "pickup_longitude": -73.98059844970702
+        },
+        {
+          "dropoff_latitude": 40.76137161254883,
+          "dropoff_longitude": -73.99739837646483,
+          "pickup_latitude": 40.74539566040039,
+          "pickup_longitude": -73.99122619628906
+        },
+        {
+          "dropoff_latitude": 40.76158142089844,
+          "dropoff_longitude": -73.97454833984375,
+          "pickup_latitude": 40.76974105834961,
+          "pickup_longitude": -73.9647216796875
+        },
+        {
+          "dropoff_latitude": 40.7672119140625,
+          "dropoff_longitude": -73.96649932861328,
+          "pickup_latitude": 40.74592971801758,
+          "pickup_longitude": -73.98633575439453
+        },
+        {
+          "dropoff_latitude": 40.780948638916016,
+          "dropoff_longitude": -73.9588165283203,
+          "pickup_latitude": 40.75212097167969,
+          "pickup_longitude": -73.97692108154298
+        },
+        {
+          "dropoff_latitude": 40.70567321777344,
+          "dropoff_longitude": -74.00820922851562,
+          "pickup_latitude": 40.74029541015625,
+          "pickup_longitude": -74.00576782226562
+        },
+        {
+          "dropoff_latitude": 40.73323059082031,
+          "dropoff_longitude": -74.00450134277344,
+          "pickup_latitude": 40.75185775756836,
+          "pickup_longitude": -73.98236083984375
+        },
+        {
+          "dropoff_latitude": 40.76137161254883,
+          "dropoff_longitude": -73.97437286376955,
+          "pickup_latitude": 40.77407455444336,
+          "pickup_longitude": -73.94522857666014
+        },
+        {
+          "dropoff_latitude": 40.76807022094727,
+          "dropoff_longitude": -73.86132049560547,
+          "pickup_latitude": 40.76780319213867,
+          "pickup_longitude": -73.98511505126955
+        },
+        {
+          "dropoff_latitude": 40.72815322875977,
+          "dropoff_longitude": -73.99910736083984,
+          "pickup_latitude": 40.77204132080078,
+          "pickup_longitude": -73.9827880859375
+        },
+        {
+          "dropoff_latitude": 40.75102996826172,
+          "dropoff_longitude": -73.97461700439453,
+          "pickup_latitude": 40.71442031860352,
+          "pickup_longitude": -74.00743865966798
+        },
+        {
+          "dropoff_latitude": 40.77857971191406,
+          "dropoff_longitude": -73.95406341552734,
+          "pickup_latitude": 40.72351837158203,
+          "pickup_longitude": -74.00286102294923
+        },
+        {
+          "dropoff_latitude": 40.721927642822266,
+          "dropoff_longitude": -73.99649047851562,
+          "pickup_latitude": 40.7588005065918,
+          "pickup_longitude": -73.98841857910156
+        },
+        {
+          "dropoff_latitude": 40.76931381225585,
+          "dropoff_longitude": -73.98319244384766,
+          "pickup_latitude": 40.76395034790039,
+          "pickup_longitude": -73.97760009765625
+        },
+        {
+          "dropoff_latitude": 40.78023910522461,
+          "dropoff_longitude": -73.98046875,
+          "pickup_latitude": 40.75157928466797,
+          "pickup_longitude": -73.98661804199219
+        },
+        {
+          "dropoff_latitude": 40.774391174316406,
+          "dropoff_longitude": -73.9554214477539,
+          "pickup_latitude": 40.77012634277344,
+          "pickup_longitude": -73.96443176269531
+        },
+        {
+          "dropoff_latitude": 40.76844024658203,
+          "dropoff_longitude": -73.98478698730467,
+          "pickup_latitude": 40.74502944946289,
+          "pickup_longitude": -73.9879608154297
+        },
+        {
+          "dropoff_latitude": 40.736854553222656,
+          "dropoff_longitude": -73.9787368774414,
+          "pickup_latitude": 40.728004455566406,
+          "pickup_longitude": -73.9947509765625
+        },
+        {
+          "dropoff_latitude": 40.69013977050781,
+          "dropoff_longitude": -73.99215698242188,
+          "pickup_latitude": 40.75017929077149,
+          "pickup_longitude": -73.9915313720703
+        }
+      ],
+      "getColor": [
+        255,
+        0,
+        0
+      ],
+      "getPosition": "@@=[dropoff_longitude, dropoff_latitude]",
+      "getRadius": 100,
+      "id": "b277c675-fc92-4e92-845c-014a49f97f52",
+      "pickable": true
+    }
+  ],
+  "mapProvider": "carto",
+  "mapStyle": "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
+  "views": [
+    {
+      "@@type": "MapView",
+      "controller": true
+    }
+  ]
+};
+    const tooltip = true;
+    const customLibraries = null;
+    const configuration = null;
+
+    const deckInstance = createDeck({
+                  container,
+      jsonInput,
+      tooltip,
+      customLibraries,
+      configuration
+    });
+
+  </script>
+</html>
