@@ -1,18 +1,25 @@
 # Predicting and Analyzing NYC Taxi Trip Durations
 
+![Untitled](https://github.com/user-attachments/assets/1c2b5644-8bab-40c9-b2fa-be2267051c34)
+
+
 ## Business Problem
 
 ### The goal of this project is to analyze and predict NYC taxi trip durations. By identifying patterns such as peak hours, typical trip lengths, and other influencing factors, the project aims to optimize fleet management, implement dynamic pricing strategies, and improve overall operational efficiency. Additionally, insights from this analysis will help stakeholders understand customer behavior and improve service delivery.
-
 
 ## Approach to the Problem
 
 Data Exploration:
 
+![Untitled](https://github.com/user-attachments/assets/f4372c8e-c4d5-437f-b85f-56ec6e7d460b)
+
+
     Analyze the distribution of trip durations.
     Identify temporal patterns such as peak hours and daily trends.
 
 Feature Engineering:
+
+
 
     Create additional features like pickup_hour and pickup_dayofweek to capture temporal effects.
     Categorize trips into short, medium, and long durations for simplified analysis.
@@ -64,6 +71,10 @@ A/B Testing Results:
 Heatmaps and Box Plots:
 
     Created to analyze hourly and daily trends, highlighting variability in trip durations and pickup activity.
+
+Hypothesis Testing Results:
+
+Compared average trip durations across the days of the week. The results showed significant variation, with the ANOVA test confirming that trip durations differ statistically between weekdays and weekends. This indicates that trip patterns are influenced by the day, reflecting shorter commutes during weekdays and longer trips on weekends.
 
 ## Business Insights 
 
